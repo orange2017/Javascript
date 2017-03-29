@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DOM的学习</title>
+<script>
+function changeLink(){
+	document.getElementById('myAnchor').innerHTML="新浪";
+	document.getElementById('myAnchor').href="http://sina.com";
+	}
+	function checkDel(){
+//	return confirm("是否删除？");
+		}
+	function allSelect(){
+		var pross=document.getElementsByName("cbk_proid");
+		var count=0;
+		for(var i=0;i<pross.length;i++){
+		//	pross[i].checked=true;
+		//	pross[i].checked=true;
+		if(pross[i].checked=true){
+			count++;
+			}
+		pross[i].checked=!pross[i].checked;
+			}
+			alert(count);
+		}
+</script>
+</head>
+<body>
+<a	id="myAnchor"  href="http://www.taobao.com">淘宝网</a>
+<input	type="button"	onClick="changeLink()"	value="使用DOM改变链接">
+<a	href="next.html">next</a></br>
+<a	href="javascrpit:history.go(1);">前进</a>
+<a	href="javascrpit:history.go(-1);">后退</a>
+<a	href="javascrpit:location.reload();">加载</a>
+<a	href="dodel.html"	onClick="return confirm('是否删除？');">删除</a>
+<form	name="frmjindong"	method="post"	action="">
+<input	id="cbkall" name="cbkall" type="checkbox" onClick="allSelect();"/>全选
+<input	id="cbkall" name="cbkall" type="checkbox" />全不选</br>
+<input	name="cbk_proid" type="checkbox" value="aaa"/>三星</br>
+<input	name="cbk_proid" type="checkbox" value="aaaa"/>苹果</br>
+<input	name="cbk_proid" type="checkbox" value="aaaaa"/>华为</br>
+</form>
+</body>
+</html>
